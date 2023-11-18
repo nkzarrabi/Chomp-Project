@@ -1,0 +1,29 @@
+This Python script simulates a game of Chomp, a two-player strategy game played on a rectangular chocolate bar made up of smaller square blocks (the board). The players take turns to choose one block and "eat it" (remove from the board), along with those that are below it and to its right. The top left block is "poisoned" and the player who eats this loses.
+
+For more information about the game, visit [Chomp Game](https://nikouz.com/chomp).
+
+## Functions
+
+The script contains three main functions:
+
+- `calculate_grundy_values(m, n)`: This function calculates the Grundy values for an m x n Chomp board excluding the poison square. Grundy values are a concept from combinatorial game theory that can be used to determine the optimal move in a game.
+
+- `select_move(grundy_values, m, n)`: This function uses the Grundy values to select the optimal move for the CPU player. It looks for a move that leads to a state with a Grundy value of 0, which is a losing state for the next player.
+
+- `play_chomp(m, n)`: This function simulates a game of Chomp. It alternates between the player and the CPU, with the player making a random move and the CPU making the optimal move according to the Grundy values. The game continues until the board's Grundy value is 0, which means the current player has no winning moves and will lose the game.
+
+## Usage
+
+To run the game simulation, execute the script with Python:
+
+```bash
+python chomp.py
+```
+
+The game will start with a 4x7 board. You can change the board size by modifying the arguments to the `play_chomp` function in the `if __name__ == "__main__":` block.
+
+## Future Improvements
+
+- Implement a smarter strategy for the player's moves.
+- Modify the game rules or add additional features.
+- visit [Chomp Game](https://nikouz.com/chomp) for more on this 
